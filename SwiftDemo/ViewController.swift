@@ -8,11 +8,18 @@
 
 import UIKit
 
+struct LYHomeModel {
+    var title: String?
+    var viewController: AnyClass
+}
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var tableView: UITableView!
     let cellID = "cellID"
     let cellHeight: CGFloat = 50.0
+    let dataSource = [LYHomeModel(title:"Watch", viewController:WatchViewController.self)]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +42,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return self.dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: cellID)
-        tableViewCell.textLabel?.text = "custom cell"
+        tableViewCell.textLabel?.text = self.dataSource[indexPath.row].title ?? "cell"
         return tableViewCell
     }
     
@@ -48,6 +55,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath.row {
+        case 0:
+//            let vc = self.dataSource[indexPath.row].viewController
+            let vc = WatchViewController()
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        default:
+            break
+        }
     }
     
     

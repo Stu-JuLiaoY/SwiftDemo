@@ -12,14 +12,12 @@ class WatchViewController: UIViewController {
     
     var tapBtn: UIButton!
     var countLabel: UILabel!
-    var navigationController: UINavigationController? = <#value#>
-    
-    
-    
+    var count = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .white
         createView()
         // Do any additional setup after loading the view.
     }
@@ -29,11 +27,18 @@ class WatchViewController: UIViewController {
         self.tapBtn.frame = CGRect(x: (self.view.bounds.width - 200) / 2, y: (self.view.bounds.height - 100), width: 200, height: 40)
         self.tapBtn.titleLabel?.text = "Tap"
         self.tapBtn.titleLabel?.textColor = .black
-        self.tapBtn
+        self.tapBtn.addTarget(self, action: #selector(counter), for: .touchUpInside)
         self.view.addSubview(self.tapBtn)
         
-        self.countLabel = UILabel()
-        self.countLabel.
+        self.countLabel = UILabel.init(frame: CGRect(x: 0, y: 70, width: self.view.bounds.width, height: 100))
+        self.countLabel.text = String(self.count)
+        self.countLabel.textColor = .red
+        self.view.addSubview(self.countLabel)
+    }
+    
+    func counter() {
+        self.count += 1
+        self.countLabel.text = String(self.count)
     }
     
     override func didReceiveMemoryWarning() {
