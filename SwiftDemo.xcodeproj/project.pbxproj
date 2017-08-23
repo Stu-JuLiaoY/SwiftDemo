@@ -14,7 +14,11 @@
 		B327BDA91F4C369E0015C86E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B327BDA71F4C369E0015C86E /* LaunchScreen.storyboard */; };
 		B327BDB41F4C369E0015C86E /* SwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B327BDB31F4C369E0015C86E /* SwiftDemoTests.swift */; };
 		B327BDBF1F4C369E0015C86E /* SwiftDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B327BDBE1F4C369E0015C86E /* SwiftDemoUITests.swift */; };
-		B3504EEA1F4C646600590834 /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3504EE91F4C646600590834 /* WatchViewController.swift */; };
+		B33057B21F4D549A004DA60D /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33057B11F4D549A004DA60D /* LocationViewController.swift */; };
+		B34034FF1F4D85FD0089AA11 /* ThreeDimensionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34034FE1F4D85FD0089AA11 /* ThreeDimensionalViewController.swift */; };
+		B340354E1F4DB4490089AA11 /* PeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340354D1F4DB4490089AA11 /* PeekViewController.swift */; };
+		B34035501F4DB5470089AA11 /* image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B340354F1F4DB5470089AA11 /* image.jpeg */; };
+		B3504EEA1F4C646600590834 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3504EE91F4C646600590834 /* CounterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +52,11 @@
 		B327BDBA1F4C369E0015C86E /* SwiftDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B327BDBE1F4C369E0015C86E /* SwiftDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDemoUITests.swift; sourceTree = "<group>"; };
 		B327BDC01F4C369E0015C86E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B3504EE91F4C646600590834 /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
+		B33057B11F4D549A004DA60D /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		B34034FE1F4D85FD0089AA11 /* ThreeDimensionalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeDimensionalViewController.swift; sourceTree = "<group>"; };
+		B340354D1F4DB4490089AA11 /* PeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeekViewController.swift; sourceTree = "<group>"; };
+		B340354F1F4DB5470089AA11 /* image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpeg; sourceTree = "<group>"; };
+		B3504EE91F4C646600590834 /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +107,13 @@
 		B327BD9D1F4C369E0015C86E /* SwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B340354F1F4DB5470089AA11 /* image.jpeg */,
 				B327BD9E1F4C369E0015C86E /* AppDelegate.swift */,
 				B327BDA01F4C369E0015C86E /* ViewController.swift */,
-				B3504EE91F4C646600590834 /* WatchViewController.swift */,
+				B3504EE91F4C646600590834 /* CounterViewController.swift */,
+				B33057B11F4D549A004DA60D /* LocationViewController.swift */,
+				B34034FE1F4D85FD0089AA11 /* ThreeDimensionalViewController.swift */,
+				B340354D1F4DB4490089AA11 /* PeekViewController.swift */,
 				B327BDA21F4C369E0015C86E /* Main.storyboard */,
 				B327BDA51F4C369E0015C86E /* Assets.xcassets */,
 				B327BDA71F4C369E0015C86E /* LaunchScreen.storyboard */,
@@ -240,6 +252,7 @@
 			files = (
 				B327BDA91F4C369E0015C86E /* LaunchScreen.storyboard in Resources */,
 				B327BDA61F4C369E0015C86E /* Assets.xcassets in Resources */,
+				B34035501F4DB5470089AA11 /* image.jpeg in Resources */,
 				B327BDA41F4C369E0015C86E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,9 +278,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B34034FF1F4D85FD0089AA11 /* ThreeDimensionalViewController.swift in Sources */,
 				B327BDA11F4C369E0015C86E /* ViewController.swift in Sources */,
-				B3504EEA1F4C646600590834 /* WatchViewController.swift in Sources */,
+				B3504EEA1F4C646600590834 /* CounterViewController.swift in Sources */,
 				B327BD9F1F4C369E0015C86E /* AppDelegate.swift in Sources */,
+				B33057B21F4D549A004DA60D /* LocationViewController.swift in Sources */,
+				B340354E1F4DB4490089AA11 /* PeekViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

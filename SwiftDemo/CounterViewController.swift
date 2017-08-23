@@ -1,5 +1,5 @@
 //
-//  WatchViewController.swift
+//  CounterViewController.swift
 //  SwiftDemo
 //
 //  Created by Ju Liaoyuan on 2017/8/22.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WatchViewController: UIViewController {
+class CounterViewController: UIViewController {
     
     var tapBtn: UIButton!
     var countLabel: UILabel!
@@ -22,21 +22,28 @@ class WatchViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func createView() {
+    override func createView() {
         self.tapBtn = UIButton(type:.custom)
         self.tapBtn.frame = CGRect(x: (self.view.bounds.width - 200) / 2, y: (self.view.bounds.height - 100), width: 200, height: 40)
-        self.tapBtn.titleLabel?.text = "Tap"
-        self.tapBtn.titleLabel?.textColor = .black
+        self.tapBtn.setTitle("Tap", for: .normal)
+        self.tapBtn.setTitleColor(.black, for: .normal)
+        self.tapBtn.backgroundColor = .blue
+        self.tapBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         self.tapBtn.addTarget(self, action: #selector(counter), for: .touchUpInside)
         self.view.addSubview(self.tapBtn)
         
         self.countLabel = UILabel.init(frame: CGRect(x: 0, y: 70, width: self.view.bounds.width, height: 100))
         self.countLabel.text = String(self.count)
+        self.countLabel.textAlignment = .center
         self.countLabel.textColor = .red
+        self.countLabel.font = UIFont.systemFont(ofSize: 60)
+        self.countLabel.backgroundColor = .gray
         self.view.addSubview(self.countLabel)
     }
     
     func counter() {
+//        let result = self.count << 1
+//        self.count = result
         self.count += 1
         self.countLabel.text = String(self.count)
     }

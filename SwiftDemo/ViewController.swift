@@ -13,12 +13,20 @@ struct LYHomeModel {
     var viewController: AnyClass
 }
 
+extension UIViewController {
+    func createView() {}
+}
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var tableView: UITableView!
+    
     let cellID = "cellID"
     let cellHeight: CGFloat = 50.0
-    let dataSource = [LYHomeModel(title:"Watch", viewController:WatchViewController.self)]
+    let dataSource = [LYHomeModel(title:"Watch", viewController:CounterViewController.self),
+                      LYHomeModel(title:"Location", viewController: LocationViewController.self),
+                      LYHomeModel(title:"3D Touch", viewController:ThreeDimensionalViewController.self)]
+
     
     
     override func viewDidLoad() {
@@ -28,12 +36,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     
-    func createView() {
+    override func createView() {
         self.tableView = UITableView.init(frame: self.view.bounds, style: UITableViewStyle.plain)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
-        
         self.view.addSubview(self.tableView)
     }
     
@@ -55,15 +62,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        switch indexPath.row {
-        case 0:
-//            let vc = self.dataSource[indexPath.row].viewController
-            let vc = WatchViewController()
-            
-            self.navigationController?.pushViewController(vc, animated: true)
-        default:
-            break
-        }
+
+        let vcClass: UIViewController.Type = self.dataSource[indexPath.row].viewController as! UIViewController.Type
+        let vc = vcClass.init()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
