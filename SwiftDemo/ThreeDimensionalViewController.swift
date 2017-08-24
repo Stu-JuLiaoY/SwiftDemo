@@ -43,18 +43,31 @@ class ThreeDimensionalViewController: UIViewController, UITableViewDataSource, U
         return 2
     }
     
-    override func registerForPreviewing(with delegate: UIViewControllerPreviewingDelegate, sourceView: UIView) -> UIViewControllerPreviewing {
-        let cell = sourceView as! UITableViewCell
-        let indexPath = tableView.indexPath(for: cell)
-        if indexPath?.row == 0 {
-            return PeekViewController() as! UIViewControllerPreviewing
-        } else {
-            return SFSafariViewController.init(url: NSURL(string:"https://github.com")! as URL) as! UIViewControllerPreviewing
-        }
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        print("peekkkkkkk")
+        // get cell
+        let indexPath = tableView.indexPath(for: previewingContext.sourceView as! UITableViewCell)
         
+        if indexPath?.row == 0 {
+            // open view controller
+            let v = previewingContext.sourceView
+            previewingContext.sourceRect = CGRect(origin: CGPoint(x: v.frame.origin.x - v.bounds.width/2,
+                                                                  y: v.frame.origin.y - v.bounds.height/2),
+                                                  size: CGSize(width: v.bounds.width,
+                                                               height: v.bounds.height))
+            let peeker = PeekViewController()
+//            peeker.preferredContentSize = CGSize(width: 30, height: 30)
+            
+            return peeker
+        } else {
+            // open web view
+            return SFSafariViewController.init(url: NSURL(string:"https://github.com/Stu-JuLiaoY")! as URL)
+        }
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        print("poooooooop")
+        viewControllerToCommit.preferredContentSize = CGSize(width: 300, height: 300)
         self.show(viewControllerToCommit, sender: self)
     }
   

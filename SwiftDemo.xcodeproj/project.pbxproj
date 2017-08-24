@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3204DA81F4EB11500686741 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3204DA71F4EB11500686741 /* CameraViewController.swift */; };
 		B327BD9F1F4C369E0015C86E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B327BD9E1F4C369E0015C86E /* AppDelegate.swift */; };
 		B327BDA11F4C369E0015C86E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B327BDA01F4C369E0015C86E /* ViewController.swift */; };
 		B327BDA41F4C369E0015C86E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B327BDA21F4C369E0015C86E /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B3204DA71F4EB11500686741 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		B327BD9B1F4C369E0015C86E /* SwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B327BD9E1F4C369E0015C86E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B327BDA01F4C369E0015C86E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				B33057B11F4D549A004DA60D /* LocationViewController.swift */,
 				B34034FE1F4D85FD0089AA11 /* ThreeDimensionalViewController.swift */,
 				B340354D1F4DB4490089AA11 /* PeekViewController.swift */,
+				B3204DA71F4EB11500686741 /* CameraViewController.swift */,
 				B327BDA21F4C369E0015C86E /* Main.storyboard */,
 				B327BDA51F4C369E0015C86E /* Assets.xcassets */,
 				B327BDA71F4C369E0015C86E /* LaunchScreen.storyboard */,
@@ -282,6 +285,7 @@
 				B327BDA11F4C369E0015C86E /* ViewController.swift in Sources */,
 				B3504EEA1F4C646600590834 /* CounterViewController.swift in Sources */,
 				B327BD9F1F4C369E0015C86E /* AppDelegate.swift in Sources */,
+				B3204DA81F4EB11500686741 /* CameraViewController.swift in Sources */,
 				B33057B21F4D549A004DA60D /* LocationViewController.swift in Sources */,
 				B340354E1F4DB4490089AA11 /* PeekViewController.swift in Sources */,
 			);

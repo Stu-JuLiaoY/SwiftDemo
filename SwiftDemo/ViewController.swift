@@ -32,6 +32,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         createView()
+        let icon = UIApplicationShortcutIcon(templateImageName: "image")
+        let item = UIApplicationShortcutItem(type: "type", localizedTitle: "3D Press", localizedSubtitle: "test", icon: icon, userInfo: nil)
+        UIApplication.shared.shortcutItems?.append(item)
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     

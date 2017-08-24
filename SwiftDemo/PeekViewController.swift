@@ -13,11 +13,24 @@ class PeekViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = .white
+        
         let imageView = UIImageView.init(image: #imageLiteral(resourceName: "image.jpeg"))
         imageView.frame = CGRect(x: (self.view.bounds.width - 300) / 2, y: (self.view.bounds.height - 300) / 2, width: 300, height: 300)
         self.view.addSubview(imageView)
 
         // Do any additional setup after loading the view.
+    }
+    
+    override var previewActionItems: [UIPreviewActionItem] {
+        let like = UIPreviewAction(title: "Like", style: .default) { (previewAction, viewController) in
+            
+        }
+        
+        let cancel = UIPreviewAction(title: "Cancel", style: .destructive) { (previewAction, viewController) in
+           
+        }
+        return [like, cancel]
     }
 
     override func didReceiveMemoryWarning() {
